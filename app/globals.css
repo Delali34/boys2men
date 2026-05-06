@@ -5,12 +5,14 @@
 :root {
   --indigo: #3A40BC;
   --indigo-deep: #1A1F4D;
-  --indigo-darker: #14184a;
   --gold: #FDBD59;
-  --gold-dark: #f0a830;
+  --gold-dark: #E89D2E;
   --cream: #F4F4FB;
-  --ink: #0a0a14;
-  --paper: #ffffff;
+  --cream-warm: #EFEEE6;
+  --paper: #FAF9F4;
+  --ink: #14143A;
+  --ink-soft: #4A4A6E;
+  --line: rgba(20, 20, 58, 0.12);
 }
 
 * {
@@ -28,8 +30,10 @@ body {
   background: var(--paper);
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
 }
 
 ::selection {
@@ -37,115 +41,96 @@ body {
   color: var(--indigo-deep);
 }
 
-.font-serif-italic {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-}
-
 .font-display {
-  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
-}
-
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
-
-/* Marquee animation for topic ticker */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-/* Subtle grain overlay */
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-}
-
-/* Hover underline animation */
-.link-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0 1px;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  transition: background-size 0.3s ease;
-}
-
-.link-underline:hover {
-  background-size: 100% 1px;
-}
-
-/* Card lift */
-.card-lift {
-  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.4s ease;
-}
-
-.card-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px -25px rgba(58, 64, 188, 0.35);
-}
-
-/* Number stamp */
-.num-stamp {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-/* Hero gradient overlay */
-.hero-vignette {
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(253, 189, 89, 0.08) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(255, 255, 255, 0.04) 0%,
-      transparent 50%
-    );
+.font-mono-num {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Gold underline for kicker */
-.kicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+/* Eyebrow / kicker */
+.eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* Marquee gradient mask */
-.marquee-mask {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+/* Hairline rule */
+.hr-line {
+  height: 1px;
+  background: var(--line);
+}
+
+/* Top sticky border */
+.has-top-line {
+  border-top: 1px solid var(--line);
+}
+
+/* Soft underline link */
+.link-soft {
+  position: relative;
+  display: inline-block;
+}
+.link-soft::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.link-soft:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Subtle reveal */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 40s linear infinite; }
+
+/* Image treatment - desaturated warm */
+.img-warm {
+  filter: contrast(1.02) saturate(0.92);
+}
+
+/* Disc bullet */
+.disc {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--gold);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Quiet card */
+.quiet-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.quiet-card:hover {
+  border-color: var(--ink);
 }
