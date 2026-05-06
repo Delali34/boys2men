@@ -3,25 +3,111 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --accent: #c8a45a;
+  --accent-dark: #b08d3e;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --section-alt: #f3f0ea;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  .section-number {
+    @apply text-[10rem] md:text-[14rem] font-black leading-none text-gray-100 select-none absolute -top-8 -left-4 z-0;
+    font-family: var(--font-playfair), serif;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-700 via-amber-600 to-yellow-600;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-gray-200/60 rounded-2xl;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a2e 40%,
+    #16213e 70%,
+    #0f3460 100%
+  );
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(200, 164, 90, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.topic-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px -15px rgba(200, 164, 90, 0.3);
+}
+
+.agenda-line::before {
+  content: '';
+  position: absolute;
+  left: 1.125rem;
+  top: 2.5rem;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
