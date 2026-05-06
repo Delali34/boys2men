@@ -8,17 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        accent: {
-          DEFAULT: "#c8a45a",
-          dark: "#b08d3e",
-          light: "#e8d5a3",
+        indigo: {
+          DEFAULT: "#3A40BC",
+          deep: "#1A1F4D",
+          darker: "#14184a",
         },
+        gold: {
+          DEFAULT: "#FDBD59",
+          dark: "#f0a830",
+        },
+        cream: "#F4F4FB",
+        ink: "#0a0a14",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        serif: ["Georgia", "Times New Roman", "serif"],
+      },
+      letterSpacing: {
+        widest: "0.25em",
       },
     },
   },
