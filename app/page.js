@@ -431,25 +431,29 @@ export default function Home() {
       </section>
 
       {/* ============== 05 — PILLARS ============== */}
-      <section className="bg-[#3A40BC] text-[#FAF9F4]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 mb-20">
-            <p className="eyebrow text-[#FFBD58] lg:col-span-3">05 — In Our Words</p>
-            <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] max-w-[36rem]">
-              What we stand for, in three lines.
+      <section className="bg-[#3A40BC] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_120%,rgba(255,189,88,0.1),transparent)]" />
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/[0.08] border border-white/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFBD58]" />
+              <span className="text-white/70 text-[12px] font-semibold tracking-[0.12em] uppercase">Our Pillars</span>
+            </div>
+            <h2 className="text-white font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em]">
+              What we stand for.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 border-t border-white/15">
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
             {PILLARS.map((p, i) => (
               <div
                 key={p.roman}
-                className={`py-12 md:py-16 ${i > 0 ? "md:border-l border-white/15 md:pl-10" : "md:pr-10"} ${i > 0 ? "border-t md:border-t-0 border-white/15" : ""}`}
+                className="relative bg-white/[0.06] border border-white/[0.08] rounded-2xl p-8 md:p-10 backdrop-blur-sm hover:bg-white/[0.1] transition-all duration-300 group"
               >
-                <p className="font-display text-[#FFBD58] text-4xl md:text-5xl mb-12">
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#FFBD58] text-[#0f0f23] font-bold text-lg mb-8">
                   {p.roman}
-                </p>
-                <h3 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.02em]">
+                </span>
+                <h3 className="text-white font-bold text-2xl md:text-3xl leading-[1.15] tracking-[-0.01em]">
                   {p.line1}
                   <br />
                   {p.line2}
@@ -461,31 +465,33 @@ export default function Home() {
       </section>
 
       {/* ============== 06 — TOPICS ============== */}
-      <section className="bg-[#F4F4FB]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <p className="eyebrow text-[#4A4A6E] lg:col-span-3">06 — The Conversations</p>
-            <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] text-[#14143A] max-w-[44rem]">
-              Eight conversations<br />
-              that don&rsquo;t happen anywhere else.
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Conversations</span>
+            </div>
+            <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] max-w-xl mx-auto">
+              Eight conversations that don&rsquo;t happen anywhere else.
             </h2>
           </div>
 
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-[rgba(20,20,58,0.12)]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {TOPICS.map((t, i) => (
-              <li
+              <div
                 key={t}
-                className="border-r border-b border-[rgba(20,20,58,0.12)] p-7 md:p-8 min-h-[10rem] flex flex-col justify-between hover:bg-white transition-colors group"
+                className="group relative bg-[#f7f8fc] rounded-2xl p-6 md:p-7 hover:bg-[#3A40BC] border border-gray-200/60 hover:border-[#3A40BC] transition-all duration-300 cursor-default"
               >
-                <p className="font-mono-num text-[11px] tracking-widest text-[#4A4A6E]">
+                <span className="text-[#3A40BC]/20 group-hover:text-white/10 font-extrabold text-5xl leading-none block mb-6 transition-colors duration-300">
                   {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="font-display text-2xl md:text-[1.65rem] text-[#14143A] leading-tight group-hover:text-[#3A40BC] transition-colors">
+                </span>
+                <h3 className="text-[#0f0f23] group-hover:text-white font-bold text-lg leading-tight transition-colors duration-300">
                   {t}
                 </h3>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
