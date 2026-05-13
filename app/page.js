@@ -252,10 +252,6 @@ export default function Home() {
                   loading="eager"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-5 md:-left-5 bg-[#FFBD58] rounded-2xl p-5 shadow-xl shadow-black/20">
-                <p className="font-extrabold text-[#0f0f23] text-2xl md:text-3xl leading-none">18–30</p>
-                <p className="text-[#0f0f23]/60 text-[11px] font-semibold mt-1.5 tracking-widest uppercase">Young Men</p>
-              </div>
             </div>
           </div>
         </div>
@@ -283,17 +279,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Topic marquee */}
-      <div className="border-b border-gray-200 py-5 overflow-hidden bg-white">
-        <div className="flex marquee whitespace-nowrap">
-          {[...TOPIC_TAGS, ...TOPIC_TAGS, ...TOPIC_TAGS].map((t, i) => (
-            <span key={i} className="text-[#0f0f23] font-bold text-xl md:text-2xl flex items-center mr-10 tracking-tight">
-              {t}
-              <span className="ml-10 text-[#FFBD58]" aria-hidden>&#9670;</span>
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* ============== 01 — THE REALITY (Quote) ============== */}
       <section id="reality" className="relative bg-white overflow-hidden">
@@ -356,65 +341,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============== 03 — REALITY 3 LINES ============== */}
-      <section className="bg-[#EFEEE6]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <p className="eyebrow text-[#4A4A6E] lg:col-span-3">03 — The Reality</p>
-            <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] text-[#14143A] max-w-[44rem]">
-              Pressure is high.<br />
-              Opportunity is narrow.
+      {/* ============== 03 — THE CHALLENGES ============== */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Challenges</span>
+            </div>
+            <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] max-w-2xl mx-auto">
+              Pressure is high. Opportunity is narrow.
             </h2>
           </div>
 
-          <ol className="grid md:grid-cols-3 border-t border-[rgba(20,20,58,0.18)]">
-            {REALITY.map((r, i) => (
-              <li
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+            {REALITY.map((r) => (
+              <div
                 key={r.n}
-                className={`py-10 md:py-14 ${i > 0 ? "md:border-l border-[rgba(20,20,58,0.18)] md:pl-10" : "md:pr-10"} ${i > 0 ? "border-t md:border-t-0 border-[rgba(20,20,58,0.18)]" : ""}`}
+                className="relative bg-[#3A40BC] rounded-2xl p-8 md:p-10 overflow-hidden group hover:-translate-y-1 transition-all duration-300"
               >
-                <p className="font-mono-num text-[#3A40BC] text-sm mb-10 tracking-widest">
-                  {r.n} / 03
-                </p>
-                <h3 className="font-display text-3xl md:text-4xl text-[#14143A] leading-tight mb-5">
-                  {r.label}
-                </h3>
-                <p className="text-[#4A4A6E] text-base leading-[1.6] max-w-xs">
-                  {r.body}
-                </p>
-              </li>
+                <div className="absolute top-6 right-6 text-white/[0.06] font-extrabold text-8xl leading-none select-none pointer-events-none">
+                  {r.n}
+                </div>
+                <div className="relative">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFBD58] flex items-center justify-center mb-8">
+                    <span className="text-[#0f0f23] font-bold text-sm">{r.n}</span>
+                  </div>
+                  <h3 className="text-white font-bold text-xl md:text-2xl leading-tight mb-4">
+                    {r.label}
+                  </h3>
+                  <p className="text-white/60 text-[15px] leading-relaxed">
+                    {r.body}
+                  </p>
+                </div>
+              </div>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
-      {/* ============== 04 — PROGRAM ============== */}
-      <section id="program" className="bg-white">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-40">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="aspect-[4/5] rounded-[28px] overflow-hidden bg-[#EFEEE6]">
+      {/* ============== 04 — THE PROGRAM ============== */}
+      <section id="program" className="bg-[#f7f8fc]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-[#e8e9f0]">
                 <img
                   src={PROGRAM_IMG}
                   alt="Mentorship in conversation"
-                  className="w-full h-full object-cover img-warm"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-7 order-1 lg:order-2 lg:pl-8">
-              <p className="eyebrow text-[#4A4A6E] mb-8">04 — The Program</p>
-              <h2 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-[#14143A] max-w-[28ch]">
-                A place to land,
-                <span className="text-[#3A40BC]"> while you figure out where you&rsquo;re going.</span>
+            <div className="order-1 lg:order-2">
+              <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+                <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Program</span>
+              </div>
+
+              <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,2.75rem)] leading-[1.1] tracking-[-0.02em] mb-6">
+                A place to land, while you figure out
+                <span className="text-[#3A40BC]"> where you&rsquo;re going.</span>
               </h2>
 
-              <p className="mt-10 text-[#4A4A6E] text-lg leading-[1.6] max-w-[36rem]">
+              <p className="text-gray-500 text-[17px] leading-relaxed mb-10 max-w-lg">
                 Mentors who&rsquo;ve walked the road. No lectures, no
                 performance. Two days, real conversation.
               </p>
 
-              <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 max-w-md">
+              <div className="grid grid-cols-2 gap-3 max-w-md">
                 {[
                   "Leadership",
                   "Career",
@@ -423,12 +419,12 @@ export default function Home() {
                   "Spirituality",
                   "Brotherhood",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[#14143A] text-base">
-                    <span className="disc" />
-                    {item}
-                  </li>
+                  <div key={item} className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-200/80">
+                    <div className="w-2 h-2 rounded-full bg-[#FFBD58]" />
+                    <span className="text-[#0f0f23] text-[14px] font-medium">{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
