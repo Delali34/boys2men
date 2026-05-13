@@ -296,48 +296,60 @@ export default function Home() {
       </div>
 
       {/* ============== 01 — THE REALITY (Quote) ============== */}
-      <section id="reality" className="bg-[#3A40BC] text-[#FAF9F4]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-32 md:py-40">
-          <div className="grid lg:grid-cols-12 gap-10">
-            <p className="eyebrow text-[#FFBD58] lg:col-span-3">
-              01 — The Fallout
+      <section id="reality" className="relative bg-white overflow-hidden">
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 text-[20rem] md:text-[28rem] font-extrabold leading-none text-gray-100 select-none pointer-events-none" aria-hidden>
+          &ldquo;
+        </div>
+        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-28 md:py-40 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-12">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+            <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Reality</span>
+          </div>
+
+          <blockquote className="text-[#0f0f23] font-extrabold text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.15] tracking-[-0.02em]">
+            &ldquo;I don&rsquo;t know who I&rsquo;m supposed to be —
+            <span className="text-[#3A40BC]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
+          </blockquote>
+
+          <div className="mt-10 flex items-center justify-center gap-3">
+            <div className="h-px w-8 bg-[#FFBD58]" />
+            <p className="text-gray-400 text-[12px] font-semibold tracking-[0.12em] uppercase">
+              Boys2Men Field Interview · Accra · 2025
             </p>
-            <div className="lg:col-span-9 max-w-[58rem]">
-              <blockquote className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em]">
-                &ldquo;I don&rsquo;t know who I&rsquo;m supposed to be —
-                <span className="text-[#FFBD58]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
-              </blockquote>
-              <p className="eyebrow text-[#FAF9F4]/60 mt-12">
-                Boys2Men field interview · Accra · 2025
-              </p>
-            </div>
+            <div className="h-px w-8 bg-[#FFBD58]" />
           </div>
         </div>
       </section>
 
       {/* ============== 02 — THE NUMBERS ============== */}
-      <section className="bg-white">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 mb-20">
-            <p className="eyebrow text-[#4A4A6E] lg:col-span-3">02 — The Real Deal</p>
-            <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] text-[#14143A] max-w-[40rem]">
+      <section className="bg-[#f7f8fc]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Numbers</span>
+            </div>
+            <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em]">
               The numbers beneath the silence.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 border-t border-[rgba(20,20,58,0.12)]">
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
             {STATS.map((s, i) => (
               <div
                 key={i}
-                className={`py-10 md:py-14 ${i > 0 ? "md:border-l border-[rgba(20,20,58,0.12)] md:pl-10" : "md:pr-10"} ${i > 0 ? "border-t md:border-t-0 border-[rgba(20,20,58,0.12)]" : ""}`}
+                className="bg-white rounded-2xl p-8 md:p-10 border border-gray-200/80 hover:border-[#3A40BC]/20 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300"
               >
-                <p className="font-display text-[#3A40BC] text-7xl md:text-8xl leading-none mb-8">
+                <p className="text-[#3A40BC] font-extrabold text-6xl md:text-7xl leading-none mb-6">
                   {s.big}
                 </p>
-                <p className="text-[#14143A] text-base md:text-lg leading-[1.55] mb-6 max-w-xs">
+                <p className="text-[#0f0f23] text-base md:text-[17px] leading-[1.55] mb-6">
                   {s.body}
                 </p>
-                <p className="eyebrow text-[#4A4A6E]">{s.src}</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-px bg-[#FFBD58]" />
+                  <p className="text-gray-400 text-[11px] font-semibold tracking-[0.1em] uppercase">{s.src}</p>
+                </div>
               </div>
             ))}
           </div>
