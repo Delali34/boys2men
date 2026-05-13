@@ -100,158 +100,212 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F4] text-[#14143A]">
-      {/* ============== TOP BAR ============== */}
-      <header className="sticky top-0 z-50 bg-[#FAF9F4]/85 backdrop-blur-md border-b border-[rgba(20,20,58,0.08)]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 h-14 md:h-16 flex items-center justify-between">
-          <a href="#top" className="flex items-baseline gap-2">
-            <span className="font-display text-[#14143A] text-xl">
-              Boys<span className="text-[#3A40BC]">2</span>Men
-            </span>
-            <span className="hidden sm:inline eyebrow text-[#4A4A6E] -translate-y-0.5">
-              · 2026
-            </span>
-          </a>
+    <div className="min-h-screen bg-white text-[#0f0f23]">
+      {/* ============== NAVBAR ============== */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/60">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="h-[72px] flex items-center justify-between">
+            <a href="#top" className="text-[22px] font-extrabold tracking-tight text-[#0f0f23]">
+              Boys<span className="text-[#FFBD58]">2</span>Men
+            </a>
 
-          <nav className="hidden md:flex items-center gap-9 text-[13px] text-[#4A4A6E]">
-            <a href="#reality" className="link-soft hover:text-[#14143A] transition-colors">The Reality</a>
-            <a href="#program" className="link-soft hover:text-[#14143A] transition-colors">The Program</a>
-            <a href="#agenda" className="link-soft hover:text-[#14143A] transition-colors">Agenda</a>
-            <a href="#partners" className="link-soft hover:text-[#14143A] transition-colors">Partners</a>
-          </nav>
+            <nav className="hidden md:flex items-center gap-10">
+              {[
+                ["About", "#reality"],
+                ["Program", "#program"],
+                ["Agenda", "#agenda"],
+                ["Partners", "#partners"],
+              ].map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="text-[14px] font-medium text-gray-500 hover:text-[#0f0f23] transition-colors duration-200"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
 
-          <a
-            href="#apply"
-            className="hidden md:inline-flex items-center gap-2 bg-[#14143A] text-[#FAF9F4] text-[13px] font-medium px-4 py-2 rounded-full hover:bg-[#3A40BC] transition-colors"
-          >
-            Apply
-            <span aria-hidden>→</span>
-          </a>
+            <div className="hidden md:flex items-center gap-3">
+              <a
+                href="#apply"
+                className="text-[14px] font-semibold text-gray-600 hover:text-[#0f0f23] transition-colors px-4 py-2.5"
+              >
+                Become a Mentor
+              </a>
+              <a
+                href="#apply"
+                className="text-[14px] font-semibold bg-[#3A40BC] text-white px-6 py-2.5 rounded-full hover:bg-[#2e339e] transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/25"
+              >
+                Apply Now
+              </a>
+            </div>
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 -mr-2"
-            aria-label="Menu"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-              {menuOpen ? <path strokeLinecap="round" d="M6 18 18 6M6 6l12 12"/> : <path strokeLinecap="round" d="M4 7h16M4 17h16"/>}
-            </svg>
-          </button>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+              aria-label="Menu"
+            >
+              <svg className="w-5 h-5 text-[#0f0f23]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                {menuOpen
+                  ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  : <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5" />
+                }
+              </svg>
+            </button>
+          </div>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden border-t border-[rgba(20,20,58,0.08)] bg-[#FAF9F4]">
-            <div className="px-6 py-5 space-y-3 text-[#4A4A6E]">
+          <div className="md:hidden fixed inset-0 top-[72px] bg-[#3A40BC] z-40 animate-[fadeIn_0.2s_ease]">
+            <div className="px-8 py-10">
               {[
-                ["The Reality", "#reality"],
-                ["The Program", "#program"],
+                ["About", "#reality"],
+                ["Program", "#program"],
                 ["Agenda", "#agenda"],
                 ["Partners", "#partners"],
-              ].map(([l, h]) => (
-                <a key={l} href={h} onClick={() => setMenuOpen(false)} className="block py-1.5">
-                  {l}
+              ].map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block text-white text-[28px] font-semibold py-5 border-b border-white/10"
+                >
+                  {label}
                 </a>
               ))}
-              <a href="#apply" onClick={() => setMenuOpen(false)} className="block bg-[#14143A] text-[#FAF9F4] text-center py-2.5 rounded-full mt-3">
-                Apply
-              </a>
+              <div className="mt-10 flex flex-col gap-3">
+                <a
+                  href="#apply"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-flex items-center justify-center gap-2 bg-[#FFBD58] text-[#0f0f23] font-bold text-lg px-8 py-4 rounded-full"
+                >
+                  Apply Now
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+                <a
+                  href="#apply"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-flex items-center justify-center text-white/70 font-medium text-base py-3"
+                >
+                  Become a Mentor
+                </a>
+              </div>
             </div>
           </div>
         )}
       </header>
 
       {/* ============== HERO ============== */}
-      <section id="top" className="relative">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 pb-12 md:pb-20">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-            <div className="lg:col-span-7 max-w-[680px]">
-              <p className="eyebrow text-[#4A4A6E] mb-10">
-                <span className="disc mr-2 align-middle" />
-                A mentorship program · Ghana · 2026
-              </p>
+      <section id="top" className="relative bg-[#3A40BC] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,189,88,0.12),transparent)]" />
 
-              <h1 className="font-display text-[#14143A] text-[clamp(3.5rem,11vw,9.5rem)] leading-[0.92] tracking-[-0.03em]">
-                Boys<span className="text-[#3A40BC]">2</span>
-                <br className="md:hidden" />
-                Men.
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[120px] md:pt-[140px] pb-0">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+            <div className="lg:col-span-7 pb-16 md:pb-24 lg:pb-32">
+              <div className="inline-flex items-center gap-2.5 bg-white/[0.08] border border-white/[0.06] px-5 py-2.5 rounded-full mb-10">
+                <span className="w-2 h-2 rounded-full bg-[#FFBD58] pulse-dot" />
+                <span className="text-white/70 text-[13px] font-medium tracking-wide">
+                  Mentorship Program &middot; Accra 2026
+                </span>
+              </div>
+
+              <h1 className="text-white font-extrabold text-[clamp(2.75rem,6.5vw,5.25rem)] leading-[1.06] tracking-[-0.025em]">
+                Navigating
+                <br />
+                Manhood.
+                <br />
+                <span className="text-[#FFBD58]">On Their Terms.</span>
               </h1>
 
-              <p className="mt-10 text-[#4A4A6E] text-lg md:text-xl leading-[1.55] max-w-[34rem]">
-                Two days. A room of young men. The conversations
-                manhood deserves — on their own terms.
+              <p className="mt-7 text-white/55 text-lg md:text-xl leading-relaxed max-w-lg">
+                Two days of real conversation for young men aged 18–30 in Accra, Ghana.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4 mt-10">
                 <a
                   href="#apply"
-                  className="inline-flex items-center gap-2 bg-[#14143A] text-[#FAF9F4] text-sm font-medium px-6 py-3.5 rounded-full hover:bg-[#3A40BC] transition-colors"
+                  className="group inline-flex items-center gap-2.5 bg-[#FFBD58] text-[#0f0f23] font-semibold text-[15px] px-8 py-4 rounded-full hover:bg-[#ffcb78] transition-all duration-300 hover:shadow-xl hover:shadow-black/15 hover:-translate-y-0.5"
                 >
-                  Apply for the cohort
-                  <span aria-hidden>→</span>
+                  Apply for Cohort
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
                 </a>
                 <a
-                  href="#apply"
-                  className="inline-flex items-center gap-2 bg-transparent border border-[rgba(20,20,58,0.2)] text-[#14143A] text-sm font-medium px-6 py-3.5 rounded-full hover:border-[#14143A] transition-colors"
+                  href="#program"
+                  className="inline-flex items-center gap-2 border border-white/20 text-white font-medium text-[15px] px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-300"
                 >
-                  Become a mentor
+                  Learn More
                 </a>
               </div>
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/5] rounded-[28px] overflow-hidden bg-[#EFEEE6]">
+              <div className="aspect-[4/5] rounded-t-3xl lg:rounded-3xl overflow-hidden ring-1 ring-white/10">
                 <img
                   src={HERO_IMG}
-                  alt="Portrait"
-                  className="w-full h-full object-cover img-warm"
+                  alt="Young man in Accra"
+                  className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
-              <div className="absolute -top-5 -left-5 md:-left-8 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#FDBD59] flex items-center justify-center shadow-md rotate-[-6deg]">
-                <span className="font-display text-[#14143A] text-xl md:text-2xl">B2M</span>
+              <div className="absolute -bottom-4 -left-4 md:-bottom-5 md:-left-5 bg-[#FFBD58] rounded-2xl p-5 shadow-xl shadow-black/20">
+                <p className="font-extrabold text-[#0f0f23] text-2xl md:text-3xl leading-none">18–30</p>
+                <p className="text-[#0f0f23]/60 text-[11px] font-semibold mt-1.5 tracking-widest uppercase">Young Men</p>
               </div>
             </div>
           </div>
-
-          {/* Spec row */}
-          <dl className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 border-t border-[rgba(20,20,58,0.12)] pt-8">
-            {[
-              ["Cohort", "2026"],
-              ["Format", "2-day intensive"],
-              ["For", "Men, 18 – 30"],
-              ["Where", "Accra, Ghana"],
-            ].map(([k, v]) => (
-              <div key={k}>
-                <dt className="eyebrow text-[#4A4A6E] mb-2">{k}</dt>
-                <dd className="font-display text-2xl md:text-3xl text-[#14143A]">{v}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
-        {/* Topic ticker */}
-        <div className="border-y border-[rgba(20,20,58,0.12)] py-5 overflow-hidden bg-[#F4F4FB]">
-          <div className="flex marquee whitespace-nowrap">
-            {[...TOPIC_TAGS, ...TOPIC_TAGS, ...TOPIC_TAGS].map((t, i) => (
-              <span key={i} className="font-display text-[#14143A] text-2xl md:text-3xl flex items-center mr-12">
-                {t}
-                <span className="ml-12 text-[#FDBD59]" aria-hidden>✦</span>
-              </span>
-            ))}
+        {/* Details strip */}
+        <div className="relative border-t border-white/[0.08] bg-[#3238a8]">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <dl className="grid grid-cols-2 md:grid-cols-4">
+              {[
+                ["Cohort", "2026"],
+                ["Format", "2-Day Intensive"],
+                ["For", "Men, 18–30"],
+                ["Location", "Accra, Ghana"],
+              ].map(([k, v], i) => (
+                <div
+                  key={k}
+                  className={`py-5 md:py-6 ${i > 0 ? "md:border-l border-white/[0.08] md:pl-8" : ""}`}
+                >
+                  <dt className="text-white/35 text-[11px] font-semibold tracking-[0.15em] uppercase mb-1">{k}</dt>
+                  <dd className="text-white font-semibold text-[15px]">{v}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
+
+      {/* Topic marquee */}
+      <div className="border-b border-gray-200 py-5 overflow-hidden bg-white">
+        <div className="flex marquee whitespace-nowrap">
+          {[...TOPIC_TAGS, ...TOPIC_TAGS, ...TOPIC_TAGS].map((t, i) => (
+            <span key={i} className="text-[#0f0f23] font-bold text-xl md:text-2xl flex items-center mr-10 tracking-tight">
+              {t}
+              <span className="ml-10 text-[#FFBD58]" aria-hidden>&#9670;</span>
+            </span>
+          ))}
+        </div>
+      </div>
 
       {/* ============== 01 — THE REALITY (Quote) ============== */}
       <section id="reality" className="bg-[#3A40BC] text-[#FAF9F4]">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-32 md:py-40">
           <div className="grid lg:grid-cols-12 gap-10">
-            <p className="eyebrow text-[#FDBD59] lg:col-span-3">
+            <p className="eyebrow text-[#FFBD58] lg:col-span-3">
               01 — The Fallout
             </p>
             <div className="lg:col-span-9 max-w-[58rem]">
               <blockquote className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em]">
                 &ldquo;I don&rsquo;t know who I&rsquo;m supposed to be —
-                <span className="text-[#FDBD59]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
+                <span className="text-[#FFBD58]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
               </blockquote>
               <p className="eyebrow text-[#FAF9F4]/60 mt-12">
                 Boys2Men field interview · Accra · 2025
@@ -262,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* ============== 02 — THE NUMBERS ============== */}
-      <section className="bg-[#FAF9F4]">
+      <section className="bg-white">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 mb-20">
             <p className="eyebrow text-[#4A4A6E] lg:col-span-3">02 — The Real Deal</p>
@@ -323,7 +377,7 @@ export default function Home() {
       </section>
 
       {/* ============== 04 — PROGRAM ============== */}
-      <section id="program" className="bg-[#FAF9F4]">
+      <section id="program" className="bg-white">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-40">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
@@ -372,7 +426,7 @@ export default function Home() {
       <section className="bg-[#3A40BC] text-[#FAF9F4]">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 mb-20">
-            <p className="eyebrow text-[#FDBD59] lg:col-span-3">05 — In Our Words</p>
+            <p className="eyebrow text-[#FFBD58] lg:col-span-3">05 — In Our Words</p>
             <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] max-w-[36rem]">
               What we stand for, in three lines.
             </h2>
@@ -384,7 +438,7 @@ export default function Home() {
                 key={p.roman}
                 className={`py-12 md:py-16 ${i > 0 ? "md:border-l border-white/15 md:pl-10" : "md:pr-10"} ${i > 0 ? "border-t md:border-t-0 border-white/15" : ""}`}
               >
-                <p className="font-display text-[#FDBD59] text-4xl md:text-5xl mb-12">
+                <p className="font-display text-[#FFBD58] text-4xl md:text-5xl mb-12">
                   {p.roman}
                 </p>
                 <h3 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.02em]">
@@ -413,7 +467,7 @@ export default function Home() {
             {TOPICS.map((t, i) => (
               <li
                 key={t}
-                className="border-r border-b border-[rgba(20,20,58,0.12)] p-7 md:p-8 min-h-[10rem] flex flex-col justify-between hover:bg-[#FAF9F4] transition-colors group"
+                className="border-r border-b border-[rgba(20,20,58,0.12)] p-7 md:p-8 min-h-[10rem] flex flex-col justify-between hover:bg-white transition-colors group"
               >
                 <p className="font-mono-num text-[11px] tracking-widest text-[#4A4A6E]">
                   {String(i + 1).padStart(2, "0")}
@@ -428,7 +482,7 @@ export default function Home() {
       </section>
 
       {/* ============== 07 — AGENDA ============== */}
-      <section id="agenda" className="bg-[#FAF9F4]">
+      <section id="agenda" className="bg-white">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 mb-16">
             <p className="eyebrow text-[#4A4A6E] lg:col-span-3">07 — The Weekend</p>
@@ -475,14 +529,14 @@ export default function Home() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-40">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <p className="eyebrow text-[#FDBD59] mb-8">08 — Who It&rsquo;s For</p>
+              <p className="eyebrow text-[#FFBD58] mb-8">08 — Who It&rsquo;s For</p>
               <h2 className="font-display text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-[-0.03em]">
                 If this is you,<br />
                 this is for you.
               </h2>
 
               <div className="mt-16 flex items-baseline gap-6 border-t border-white/15 pt-8">
-                <p className="font-display text-[#FDBD59] text-7xl md:text-9xl leading-none">
+                <p className="font-display text-[#FFBD58] text-7xl md:text-9xl leading-none">
                   18—30
                 </p>
                 <p className="eyebrow text-white/60 pb-3">
@@ -505,7 +559,7 @@ export default function Home() {
       </section>
 
       {/* ============== 09 — PARTNERS ============== */}
-      <section id="partners" className="bg-[#FAF9F4]">
+      <section id="partners" className="bg-white">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
           <div className="grid lg:grid-cols-12 gap-10 mb-16">
             <p className="eyebrow text-[#4A4A6E] lg:col-span-3">09 — Partners</p>
@@ -533,16 +587,16 @@ export default function Home() {
       {/* ============== CTA ============== */}
       <section id="apply" className="bg-[#1A1F4D] text-[#FAF9F4]">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-32 md:py-48 text-center">
-          <p className="eyebrow text-[#FDBD59] mb-12">Cohort 2026</p>
+          <p className="eyebrow text-[#FFBD58] mb-12">Cohort 2026</p>
           <h2 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.95] tracking-[-0.03em] mx-auto max-w-[18ch]">
             Real talk. Real growth.
             <br />
-            <span className="text-[#FDBD59]">Start here.</span>
+            <span className="text-[#FFBD58]">Start here.</span>
           </h2>
           <div className="mt-14 flex flex-wrap justify-center gap-3">
             <a
               href="mailto:hello@boys2men.gh"
-              className="inline-flex items-center gap-2 bg-[#FDBD59] text-[#14143A] text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 bg-[#FFBD58] text-[#14143A] text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-white transition-colors"
             >
               Apply as a mentee <span aria-hidden>→</span>
             </a>
@@ -569,7 +623,7 @@ export default function Home() {
             <div className="md:col-span-5">
               <div className="flex items-baseline gap-2 mb-5">
                 <span className="font-display text-2xl text-white">
-                  Boys<span className="text-[#FDBD59]">2</span>Men
+                  Boys<span className="text-[#FFBD58]">2</span>Men
                 </span>
                 <span className="eyebrow text-white/40">2026</span>
               </div>
@@ -582,20 +636,20 @@ export default function Home() {
             <div className="md:col-span-2">
               <p className="eyebrow text-white/40 mb-4">Program</p>
               <ul className="space-y-2 text-sm">
-                <li><a href="#reality" className="hover:text-[#FDBD59] transition-colors">The Reality</a></li>
-                <li><a href="#program" className="hover:text-[#FDBD59] transition-colors">The Program</a></li>
-                <li><a href="#agenda" className="hover:text-[#FDBD59] transition-colors">Agenda</a></li>
-                <li><a href="#partners" className="hover:text-[#FDBD59] transition-colors">Partners</a></li>
+                <li><a href="#reality" className="hover:text-[#FFBD58] transition-colors">The Reality</a></li>
+                <li><a href="#program" className="hover:text-[#FFBD58] transition-colors">The Program</a></li>
+                <li><a href="#agenda" className="hover:text-[#FFBD58] transition-colors">Agenda</a></li>
+                <li><a href="#partners" className="hover:text-[#FFBD58] transition-colors">Partners</a></li>
               </ul>
             </div>
 
             <div className="md:col-span-2">
               <p className="eyebrow text-white/40 mb-4">Get Involved</p>
               <ul className="space-y-2 text-sm">
-                <li><a href="#apply" className="hover:text-[#FDBD59] transition-colors">Apply</a></li>
-                <li><a href="#apply" className="hover:text-[#FDBD59] transition-colors">Mentor</a></li>
-                <li><a href="#apply" className="hover:text-[#FDBD59] transition-colors">Partner</a></li>
-                <li><a href="#apply" className="hover:text-[#FDBD59] transition-colors">Donate</a></li>
+                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Apply</a></li>
+                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Mentor</a></li>
+                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Partner</a></li>
+                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Donate</a></li>
               </ul>
             </div>
 
@@ -603,14 +657,14 @@ export default function Home() {
               <p className="eyebrow text-white/40 mb-4">Contact</p>
               <a
                 href="mailto:hello@boys2men.gh"
-                className="block font-display text-xl text-white hover:text-[#FDBD59] transition-colors mb-4"
+                className="block font-display text-xl text-white hover:text-[#FFBD58] transition-colors mb-4"
               >
                 hello@boys2men.gh
               </a>
               <ul className="flex gap-4 text-sm">
-                <li><a href="#" className="hover:text-[#FDBD59] transition-colors">IG</a></li>
-                <li><a href="#" className="hover:text-[#FDBD59] transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-[#FDBD59] transition-colors">X</a></li>
+                <li><a href="#" className="hover:text-[#FFBD58] transition-colors">IG</a></li>
+                <li><a href="#" className="hover:text-[#FFBD58] transition-colors">LinkedIn</a></li>
+                <li><a href="#" className="hover:text-[#FFBD58] transition-colors">X</a></li>
               </ul>
             </div>
           </div>

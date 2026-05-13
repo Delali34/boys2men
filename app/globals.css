@@ -5,12 +5,12 @@
 :root {
   --indigo: #3A40BC;
   --indigo-deep: #1A1F4D;
-  --gold: #FDBD59;
+  --gold: #FFBD58;
   --gold-dark: #E89D2E;
   --cream: #F4F4FB;
   --cream-warm: #EFEEE6;
-  --paper: #FAF9F4;
-  --ink: #14143A;
+  --paper: #ffffff;
+  --ink: #0f0f23;
   --ink-soft: #4A4A6E;
   --line: rgba(20, 20, 58, 0.12);
 }
@@ -34,6 +34,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.011em;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #FFBD58 0%, #FFD78A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 ::selection {
