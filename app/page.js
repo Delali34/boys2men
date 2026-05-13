@@ -591,118 +591,141 @@ export default function Home() {
 
       {/* ============== 09 — PARTNERS ============== */}
       <section id="partners" className="bg-white">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <p className="eyebrow text-[#4A4A6E] lg:col-span-3">09 — Partners</p>
-            <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] text-[#14143A] max-w-[40rem]">
-              Built with people<br />
-              already doing the work.
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">Partners</span>
+            </div>
+            <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] max-w-xl mx-auto">
+              Built with people already doing the work.
             </h2>
           </div>
 
-          <ul className="grid sm:grid-cols-2 md:grid-cols-3 border-t border-l border-[rgba(20,20,58,0.12)]">
-            {PARTNERS.map((p, i) => (
-              <li
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {PARTNERS.map((p) => (
+              <div
                 key={p}
-                className="border-r border-b border-[rgba(20,20,58,0.12)] p-8 md:p-10 min-h-[8rem] flex items-center hover:bg-[#EFEEE6] transition-colors"
+                className="group bg-[#f7f8fc] rounded-2xl px-8 py-7 border border-gray-200/60 hover:border-[#3A40BC]/20 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300 flex items-center gap-4"
               >
-                <span className="font-display text-2xl md:text-3xl text-[#14143A] leading-tight">
+                <div className="w-10 h-10 rounded-xl bg-[#3A40BC]/[0.08] group-hover:bg-[#3A40BC] flex items-center justify-center shrink-0 transition-colors duration-300">
+                  <svg className="w-5 h-5 text-[#3A40BC] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5Z" />
+                  </svg>
+                </div>
+                <span className="text-[#0f0f23] font-semibold text-[16px]">
                   {p}
                 </span>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
       {/* ============== CTA ============== */}
-      <section id="apply" className="bg-[#1A1F4D] text-[#FAF9F4]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-32 md:py-48 text-center">
-          <p className="eyebrow text-[#FFBD58] mb-12">Cohort 2026</p>
-          <h2 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.95] tracking-[-0.03em] mx-auto max-w-[18ch]">
+      <section id="apply" className="relative bg-[#3A40BC] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,189,88,0.15),transparent)]" />
+        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-28 md:py-40 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/[0.08] border border-white/[0.06] px-4 py-2 rounded-full mb-10">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FFBD58]" />
+            <span className="text-white/70 text-[12px] font-semibold tracking-[0.12em] uppercase">Cohort 2026</span>
+          </div>
+
+          <h2 className="text-white font-extrabold text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.08] tracking-[-0.025em] mb-6">
             Real talk. Real growth.
             <br />
             <span className="text-[#FFBD58]">Start here.</span>
           </h2>
-          <div className="mt-14 flex flex-wrap justify-center gap-3">
+
+          <p className="text-white/50 text-lg mb-12 max-w-md mx-auto">
+            Join the next cohort of young men ready to have the conversations that matter.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
             <a
               href="mailto:hello@boys2men.gh"
-              className="inline-flex items-center gap-2 bg-[#FFBD58] text-[#14143A] text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-white transition-colors"
+              className="group inline-flex items-center gap-2.5 bg-[#FFBD58] text-[#0f0f23] font-semibold text-[15px] px-8 py-4 rounded-full hover:bg-[#ffcb78] transition-all duration-300 hover:shadow-xl hover:shadow-black/15 hover:-translate-y-0.5"
             >
-              Apply as a mentee <span aria-hidden>→</span>
+              Apply as a Mentee
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
             </a>
             <a
               href="mailto:hello@boys2men.gh"
-              className="inline-flex items-center gap-2 border border-white/30 text-white text-sm font-medium px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 border border-white/20 text-white font-medium text-[15px] px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
-              Become a mentor
+              Become a Mentor
             </a>
             <a
               href="mailto:hello@boys2men.gh"
-              className="inline-flex items-center gap-2 border border-white/30 text-white text-sm font-medium px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 border border-white/20 text-white font-medium text-[15px] px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
-              Partner with us
+              Partner with Us
             </a>
           </div>
         </div>
       </section>
 
       {/* ============== FOOTER ============== */}
-      <footer className="bg-[#1A1F4D] text-[#FAF9F4]/70 border-t border-white/10">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-16">
+      <footer className="bg-[#0f0f23]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16">
           <div className="grid md:grid-cols-12 gap-10 mb-12">
-            <div className="md:col-span-5">
-              <div className="flex items-baseline gap-2 mb-5">
-                <span className="font-display text-2xl text-white">
-                  Boys<span className="text-[#FFBD58]">2</span>Men
-                </span>
-                <span className="eyebrow text-white/40">2026</span>
-              </div>
-              <p className="text-white/55 text-sm leading-[1.6] max-w-xs">
+            <div className="md:col-span-4">
+              <a href="#top" className="text-[22px] font-extrabold tracking-tight text-white inline-block mb-5">
+                Boys<span className="text-[#FFBD58]">2</span>Men
+              </a>
+              <p className="text-white/40 text-sm leading-relaxed max-w-xs">
                 A mentorship program for young Ghanaian men, 18–30 — building
                 the room manhood deserves.
               </p>
             </div>
 
             <div className="md:col-span-2">
-              <p className="eyebrow text-white/40 mb-4">Program</p>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#reality" className="hover:text-[#FFBD58] transition-colors">The Reality</a></li>
-                <li><a href="#program" className="hover:text-[#FFBD58] transition-colors">The Program</a></li>
-                <li><a href="#agenda" className="hover:text-[#FFBD58] transition-colors">Agenda</a></li>
-                <li><a href="#partners" className="hover:text-[#FFBD58] transition-colors">Partners</a></li>
+              <p className="text-white/30 text-[11px] font-semibold tracking-[0.15em] uppercase mb-5">Program</p>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#reality" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">About</a></li>
+                <li><a href="#program" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Program</a></li>
+                <li><a href="#agenda" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Agenda</a></li>
+                <li><a href="#partners" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Partners</a></li>
               </ul>
             </div>
 
             <div className="md:col-span-2">
-              <p className="eyebrow text-white/40 mb-4">Get Involved</p>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Apply</a></li>
-                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Mentor</a></li>
-                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Partner</a></li>
-                <li><a href="#apply" className="hover:text-[#FFBD58] transition-colors">Donate</a></li>
+              <p className="text-white/30 text-[11px] font-semibold tracking-[0.15em] uppercase mb-5">Get Involved</p>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#apply" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Apply</a></li>
+                <li><a href="#apply" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Mentor</a></li>
+                <li><a href="#apply" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Partner</a></li>
+                <li><a href="#apply" className="text-white/50 hover:text-[#FFBD58] transition-colors duration-200">Donate</a></li>
               </ul>
             </div>
 
-            <div className="md:col-span-3">
-              <p className="eyebrow text-white/40 mb-4">Contact</p>
+            <div className="md:col-span-4">
+              <p className="text-white/30 text-[11px] font-semibold tracking-[0.15em] uppercase mb-5">Contact</p>
               <a
                 href="mailto:hello@boys2men.gh"
-                className="block font-display text-xl text-white hover:text-[#FFBD58] transition-colors mb-4"
+                className="text-white font-semibold text-lg hover:text-[#FFBD58] transition-colors duration-200 block mb-5"
               >
                 hello@boys2men.gh
               </a>
-              <ul className="flex gap-4 text-sm">
-                <li><a href="#" className="hover:text-[#FFBD58] transition-colors">IG</a></li>
-                <li><a href="#" className="hover:text-[#FFBD58] transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-[#FFBD58] transition-colors">X</a></li>
-              </ul>
+              <div className="flex gap-3">
+                {["IG", "LinkedIn", "X"].map((s) => (
+                  <a
+                    key={s}
+                    href="#"
+                    className="w-9 h-9 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/50 text-xs font-semibold hover:bg-[#FFBD58] hover:text-[#0f0f23] hover:border-[#FFBD58] transition-all duration-200"
+                  >
+                    {s}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-white/50">
-            <p>&copy; 2026 Boys2Men · Accra, Ghana</p>
-            <p className="font-display text-white/70">Navigating Manhood</p>
+          <div className="border-t border-white/[0.06] pt-6 flex flex-col md:flex-row justify-between gap-2 text-[13px] text-white/30">
+            <p>&copy; 2026 Boys2Men &middot; Accra, Ghana</p>
+            <p className="text-white/50 font-medium">Navigating Manhood</p>
           </div>
         </div>
       </footer>
