@@ -496,42 +496,45 @@ export default function Home() {
       </section>
 
       {/* ============== 07 — AGENDA ============== */}
-      <section id="agenda" className="bg-white">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-36">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <p className="eyebrow text-[#4A4A6E] lg:col-span-3">07 — The Weekend</p>
-            <h2 className="lg:col-span-9 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] tracking-[-0.02em] text-[#14143A] max-w-[36rem]">
+      <section id="agenda" className="bg-[#f7f8fc]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
+              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Weekend</span>
+            </div>
+            <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em]">
               The shape of two days.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {[
               { name: "Day One", sub: "Saturday", items: DAY_ONE },
               { name: "Day Two", sub: "Sunday", items: DAY_TWO },
             ].map((day) => (
-              <div key={day.name}>
-                <div className="flex items-baseline justify-between border-b border-[rgba(20,20,58,0.18)] pb-5 mb-2">
-                  <h3 className="font-display text-3xl md:text-4xl text-[#14143A]">
+              <div key={day.name} className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden">
+                <div className="flex items-center justify-between px-8 py-5 border-b border-gray-100">
+                  <h3 className="text-[#0f0f23] font-bold text-xl">
                     {day.name}
                   </h3>
-                  <p className="eyebrow text-[#4A4A6E]">{day.sub}</p>
+                  <span className="text-gray-400 text-[12px] font-semibold tracking-[0.12em] uppercase">{day.sub}</span>
                 </div>
-                <ol>
+                <div className="px-8 py-2">
                   {day.items.map((item, i) => (
-                    <li
+                    <div
                       key={i}
-                      className="border-b border-[rgba(20,20,58,0.08)] py-6 grid grid-cols-[80px_1fr] items-baseline gap-6"
+                      className={`flex items-center gap-5 py-5 ${i < day.items.length - 1 ? "border-b border-gray-100" : ""}`}
                     >
-                      <span className="font-mono-num text-sm text-[#3A40BC]">
+                      <span className="text-[#3A40BC] font-mono text-[13px] font-semibold w-14 shrink-0">
                         {item.time}
                       </span>
-                      <span className="font-display text-xl md:text-2xl text-[#14143A]">
+                      <span className="text-[#0f0f23] font-semibold text-[16px]">
                         {item.title}
                       </span>
-                    </li>
+                    </div>
                   ))}
-                </ol>
+                </div>
               </div>
             ))}
           </div>
@@ -539,32 +542,46 @@ export default function Home() {
       </section>
 
       {/* ============== 08 — WHO IT'S FOR ============== */}
-      <section className="bg-[#3A40BC] text-[#FAF9F4]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-28 md:py-40">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <p className="eyebrow text-[#FFBD58] mb-8">08 — Who It&rsquo;s For</p>
-              <h2 className="font-display text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-[-0.03em]">
-                If this is you,<br />
-                this is for you.
+      <section className="bg-[#3A40BC] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_120%,rgba(255,189,88,0.1),transparent)]" />
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/[0.08] border border-white/[0.06] px-4 py-2 rounded-full mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FFBD58]" />
+                <span className="text-white/70 text-[12px] font-semibold tracking-[0.12em] uppercase">Who It&rsquo;s For</span>
+              </div>
+
+              <h2 className="text-white font-extrabold text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.08] tracking-[-0.025em] mb-8">
+                If this is you,
+                <br />
+                <span className="text-[#FFBD58]">this is for you.</span>
               </h2>
 
-              <div className="mt-16 flex items-baseline gap-6 border-t border-white/15 pt-8">
-                <p className="font-display text-[#FFBD58] text-7xl md:text-9xl leading-none">
-                  18—30
-                </p>
-                <p className="eyebrow text-white/60 pb-3">
-                  Young men · Accra
-                </p>
+              <p className="text-white/55 text-lg leading-relaxed max-w-md mb-10">
+                Young men in Accra, aged 18–30, ready for honest conversations about the road ahead.
+              </p>
+
+              <div className="grid grid-cols-3 gap-4 max-w-sm">
+                {[
+                  ["18–30", "Age Range"],
+                  ["Accra", "Location"],
+                  ["2 Days", "Duration"],
+                ].map(([val, label]) => (
+                  <div key={label} className="bg-white/[0.06] border border-white/[0.08] rounded-xl p-4 text-center">
+                    <p className="text-[#FFBD58] font-extrabold text-xl leading-none mb-1.5">{val}</p>
+                    <p className="text-white/40 text-[11px] font-semibold tracking-wide uppercase">{label}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="lg:col-span-5">
-              <div className="aspect-[4/5] rounded-[28px] overflow-hidden bg-[#1A1F4D]">
+            <div>
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-white/10">
                 <img
                   src={AUDIENCE_IMG}
                   alt="Young man portrait"
-                  className="w-full h-full object-cover img-warm"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
