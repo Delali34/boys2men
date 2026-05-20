@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TOPIC_TAGS = [
   "Masculinity",
@@ -139,6 +139,17 @@ const AUDIENCE_IMG =
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <div className="min-h-screen bg-white text-[#0f0f23]">
       {/* ============== NAVBAR ============== */}
@@ -182,61 +193,125 @@ export default function Home() {
             </div>
 
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => setMenuOpen(true)}
               className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
-              aria-label="Menu"
+              aria-label="Open menu"
             >
               <svg className="w-5 h-5 text-[#0f0f23]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                {menuOpen
-                  ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  : <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5" />
-                }
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5" />
               </svg>
             </button>
           </div>
         </div>
+      </header>
 
-        {menuOpen && (
-          <div className="md:hidden fixed inset-0 top-[80px] bg-[#0054a5] z-40 animate-[fadeIn_0.2s_ease]">
-            <div className="px-8 py-10">
+      {/* ============== MOBILE MENU OVERLAY ============== */}
+      <div
+        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!menuOpen}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-[#0054a5]"
+          onClick={() => setMenuOpen(false)}
+        />
+
+        {/* Decorative glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(255,189,88,0.18),transparent)] pointer-events-none" />
+
+        {/* Panel content */}
+        <div className="relative h-full flex flex-col">
+          {/* Top bar */}
+          <div className="flex items-center justify-between px-5 sm:px-8 h-[80px] border-b border-white/[0.08]">
+            <a href="#top" onClick={() => setMenuOpen(false)} className="flex items-center">
+              <img src="/logo.png" alt="Boys2Men" className="h-14 w-auto brightness-0 invert" />
+            </a>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.08] hover:bg-white/[0.15] transition-colors"
+              aria-label="Close menu"
+            >
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Nav links */}
+          <nav className="flex-1 px-5 sm:px-8 pt-10 overflow-y-auto">
+            <p className="text-white/40 text-[11px] font-semibold tracking-[0.15em] uppercase mb-6">Menu</p>
+            <div className="space-y-1">
               {[
                 ["About", "#reality"],
                 ["Program", "#program"],
                 ["Agenda", "#agenda"],
                 ["Partners", "#partners"],
-              ].map(([label, href]) => (
+              ].map(([label, href], i) => (
                 <a
                   key={label}
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-white text-[28px] font-semibold py-5 border-b border-white/10"
+                  className="group flex items-center justify-between text-white text-3xl font-bold py-5 border-b border-white/[0.08] transition-colors hover:text-[#FFBD58]"
                 >
-                  {label}
-                </a>
-              ))}
-              <div className="mt-10 flex flex-col gap-3">
-                <a
-                  href="#apply"
-                  onClick={() => setMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 bg-[#FFBD58] text-[#0f0f23] font-bold text-lg px-8 py-4 rounded-full"
-                >
-                  Apply Now
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <span className="flex items-center gap-4">
+                    <span className="text-white/30 text-sm font-mono font-normal w-6">
+                      0{i + 1}
+                    </span>
+                    {label}
+                  </span>
+                  <svg className="w-5 h-5 text-white/30 group-hover:text-[#FFBD58] transition-all group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
+              ))}
+            </div>
+
+            <div className="mt-12 space-y-3">
+              <a
+                href="#apply"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-center gap-2 bg-[#FFBD58] text-[#0f0f23] font-bold text-base px-8 py-4 rounded-full hover:bg-[#ffcb78] transition-colors"
+              >
+                Apply Now
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+              <a
+                href="#apply"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-center gap-2 border border-white/20 text-white font-medium text-base px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
+              >
+                Become a Mentor
+              </a>
+            </div>
+          </nav>
+
+          {/* Footer */}
+          <div className="px-5 sm:px-8 py-6 border-t border-white/[0.08]">
+            <p className="text-white/40 text-[11px] font-semibold tracking-[0.15em] uppercase mb-3">Get in Touch</p>
+            <a
+              href="mailto:hello@boys2men.gh"
+              className="text-white font-semibold text-base hover:text-[#FFBD58] transition-colors"
+            >
+              hello@boys2men.gh
+            </a>
+            <div className="flex gap-2 mt-4">
+              {["IG", "LinkedIn", "X"].map((s) => (
                 <a
-                  href="#apply"
-                  onClick={() => setMenuOpen(false)}
-                  className="inline-flex items-center justify-center text-white/70 font-medium text-base py-3"
+                  key={s}
+                  href="#"
+                  className="w-9 h-9 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/60 text-xs font-semibold hover:bg-[#FFBD58] hover:text-[#0f0f23] hover:border-[#FFBD58] transition-all"
                 >
-                  Become a Mentor
+                  {s}
                 </a>
-              </div>
+              ))}
             </div>
           </div>
-        )}
-      </header>
+        </div>
+      </div>
 
       {/* ============== HERO ============== */}
       <section id="top" className="relative bg-[#0054a5] overflow-hidden">
