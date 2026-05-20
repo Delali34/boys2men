@@ -243,15 +243,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,189,88,0.12),transparent)]" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[128px] md:pt-[148px] pb-0">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
-            <div className="lg:col-span-7 pb-16 md:pb-24 lg:pb-32">
-              <div className="inline-flex items-center gap-2.5 bg-white/[0.08] border border-white/[0.06] px-5 py-2.5 rounded-full mb-10">
-                <span className="w-2 h-2 rounded-full bg-[#FFBD58] pulse-dot" />
-                <span className="text-white/70 text-[13px] font-medium tracking-wide">
-                  Mentorship Program &middot; Accra 2026
-                </span>
-              </div>
-
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="lg:col-span-8 pb-16 md:pb-24 lg:pb-32">
               <h1 className="text-white font-extrabold text-[clamp(2.75rem,6.5vw,5.25rem)] leading-[1.06] tracking-[-0.025em]">
                 Navigating
                 <br />
@@ -283,8 +276,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/5] rounded-t-3xl lg:rounded-3xl overflow-hidden ring-1 ring-white/10">
+            <div className="lg:col-span-4 relative lg:max-w-sm lg:ml-auto w-full">
+              <div className="aspect-[3/4] rounded-t-2xl lg:rounded-2xl overflow-hidden ring-1 ring-white/10">
                 <img
                   src={HERO_IMG}
                   alt="Young man in Accra"
