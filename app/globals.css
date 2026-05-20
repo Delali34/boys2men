@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --indigo: #3A40BC;
-  --indigo-deep: #1A1F4D;
+  --indigo: #0054a5;
+  --indigo-deep: #003566;
   --gold: #FFBD58;
   --gold-dark: #E89D2E;
   --cream: #F4F4FB;

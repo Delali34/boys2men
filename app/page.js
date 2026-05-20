@@ -55,14 +55,54 @@ const PILLARS = [
 ];
 
 const TOPICS = [
-  "Masculinity",
-  "Mental Health",
-  "Healthy Relationships",
-  "Entrepreneurship",
-  "Leadership",
-  "Financial Literacy",
-  "Spirituality",
-  "Mindset",
+  {
+    name: "Masculinity",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+    ),
+  },
+  {
+    name: "Mental Health",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+    ),
+  },
+  {
+    name: "Healthy Relationships",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+    ),
+  },
+  {
+    name: "Entrepreneurship",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+    ),
+  },
+  {
+    name: "Leadership",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.32.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .32-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+    ),
+  },
+  {
+    name: "Financial Literacy",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    ),
+  },
+  {
+    name: "Spirituality",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    ),
+  },
+  {
+    name: "Mindset",
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+    ),
+  },
 ];
 
 const DAY_ONE = [
@@ -104,9 +144,9 @@ export default function Home() {
       {/* ============== NAVBAR ============== */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/60">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="h-[72px] flex items-center justify-between">
-            <a href="#top" className="text-[22px] font-extrabold tracking-tight text-[#0f0f23]">
-              Boys<span className="text-[#FFBD58]">2</span>Men
+          <div className="h-[80px] flex items-center justify-between">
+            <a href="#top" className="flex items-center">
+              <img src="/logo.png" alt="Boys2Men" className="h-14 md:h-16 w-auto" />
             </a>
 
             <nav className="hidden md:flex items-center gap-10">
@@ -135,7 +175,7 @@ export default function Home() {
               </a>
               <a
                 href="#apply"
-                className="text-[14px] font-semibold bg-[#3A40BC] text-white px-6 py-2.5 rounded-full hover:bg-[#2e339e] transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/25"
+                className="text-[14px] font-semibold bg-[#0054a5] text-white px-6 py-2.5 rounded-full hover:bg-[#003f7a] transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/25"
               >
                 Apply Now
               </a>
@@ -157,7 +197,7 @@ export default function Home() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden fixed inset-0 top-[72px] bg-[#3A40BC] z-40 animate-[fadeIn_0.2s_ease]">
+          <div className="md:hidden fixed inset-0 top-[80px] bg-[#0054a5] z-40 animate-[fadeIn_0.2s_ease]">
             <div className="px-8 py-10">
               {[
                 ["About", "#reality"],
@@ -199,10 +239,10 @@ export default function Home() {
       </header>
 
       {/* ============== HERO ============== */}
-      <section id="top" className="relative bg-[#3A40BC] overflow-hidden">
+      <section id="top" className="relative bg-[#0054a5] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,189,88,0.12),transparent)]" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[120px] md:pt-[140px] pb-0">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[128px] md:pt-[148px] pb-0">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
             <div className="lg:col-span-7 pb-16 md:pb-24 lg:pb-32">
               <div className="inline-flex items-center gap-2.5 bg-white/[0.08] border border-white/[0.06] px-5 py-2.5 rounded-full mb-10">
@@ -257,7 +297,7 @@ export default function Home() {
         </div>
 
         {/* Details strip */}
-        <div className="relative border-t border-white/[0.08] bg-[#3238a8]">
+        <div className="relative border-t border-white/[0.08] bg-[#004a92]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <dl className="grid grid-cols-2 md:grid-cols-4">
               {[
@@ -286,14 +326,14 @@ export default function Home() {
           &ldquo;
         </div>
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-28 md:py-40 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-12">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-            <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Reality</span>
+          <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-12">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+            <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Reality</span>
           </div>
 
           <blockquote className="text-[#0f0f23] font-extrabold text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.15] tracking-[-0.02em]">
             &ldquo;I don&rsquo;t know who I&rsquo;m supposed to be —
-            <span className="text-[#3A40BC]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
+            <span className="text-[#0054a5]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
           </blockquote>
 
           <div className="mt-10 flex items-center justify-center gap-3">
@@ -310,9 +350,9 @@ export default function Home() {
       <section className="bg-[#f7f8fc]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="text-center mb-16 md:mb-20">
-            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Numbers</span>
+            <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+              <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Numbers</span>
             </div>
             <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em]">
               The numbers beneath the silence.
@@ -323,9 +363,9 @@ export default function Home() {
             {STATS.map((s, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-8 md:p-10 border border-gray-200/80 hover:border-[#3A40BC]/20 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300"
+                className="bg-white rounded-2xl p-8 md:p-10 border border-gray-200/80 hover:border-[#0054a5]/20 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300"
               >
-                <p className="text-[#3A40BC] font-extrabold text-6xl md:text-7xl leading-none mb-6">
+                <p className="text-[#0054a5] font-extrabold text-6xl md:text-7xl leading-none mb-6">
                   {s.big}
                 </p>
                 <p className="text-[#0f0f23] text-base md:text-[17px] leading-[1.55] mb-6">
@@ -345,9 +385,9 @@ export default function Home() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="text-center mb-16 md:mb-20">
-            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Challenges</span>
+            <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+              <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Challenges</span>
             </div>
             <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] max-w-2xl mx-auto">
               Pressure is high. Opportunity is narrow.
@@ -358,7 +398,7 @@ export default function Home() {
             {REALITY.map((r) => (
               <div
                 key={r.n}
-                className="relative bg-[#3A40BC] rounded-2xl p-8 md:p-10 overflow-hidden group hover:-translate-y-1 transition-all duration-300"
+                className="relative bg-[#0054a5] rounded-2xl p-8 md:p-10 overflow-hidden group hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="absolute top-6 right-6 text-white/[0.06] font-extrabold text-8xl leading-none select-none pointer-events-none">
                   {r.n}
@@ -395,14 +435,14 @@ export default function Home() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-                <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Program</span>
+              <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+                <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Program</span>
               </div>
 
               <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,2.75rem)] leading-[1.1] tracking-[-0.02em] mb-6">
                 A place to land, while you figure out
-                <span className="text-[#3A40BC]"> where you&rsquo;re going.</span>
+                <span className="text-[#0054a5]"> where you&rsquo;re going.</span>
               </h2>
 
               <p className="text-gray-500 text-[17px] leading-relaxed mb-10 max-w-lg">
@@ -431,7 +471,7 @@ export default function Home() {
       </section>
 
       {/* ============== 05 — PILLARS ============== */}
-      <section className="bg-[#3A40BC] relative overflow-hidden">
+      <section className="bg-[#0054a5] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_120%,rgba(255,189,88,0.1),transparent)]" />
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="text-center mb-16 md:mb-20">
@@ -468,9 +508,9 @@ export default function Home() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="text-center mb-16 md:mb-20">
-            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Conversations</span>
+            <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+              <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Conversations</span>
             </div>
             <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] max-w-xl mx-auto">
               Eight conversations that don&rsquo;t happen anywhere else.
@@ -480,14 +520,25 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {TOPICS.map((t, i) => (
               <div
-                key={t}
-                className="group relative bg-[#f7f8fc] rounded-2xl p-6 md:p-7 hover:bg-[#3A40BC] border border-gray-200/60 hover:border-[#3A40BC] transition-all duration-300 cursor-default"
+                key={t.name}
+                className="group relative bg-[#f7f8fc] rounded-2xl p-6 md:p-7 hover:bg-[#0054a5] border border-gray-200/60 hover:border-[#0054a5] transition-all duration-300 cursor-default overflow-hidden"
               >
-                <span className="text-[#3A40BC]/20 group-hover:text-white/10 font-extrabold text-5xl leading-none block mb-6 transition-colors duration-300">
+                <span className="absolute top-5 right-5 text-[#0054a5]/15 group-hover:text-white/15 font-extrabold text-2xl leading-none transition-colors duration-300">
                   {String(i + 1).padStart(2, "0")}
                 </span>
+                <div className="w-12 h-12 rounded-xl bg-white group-hover:bg-white/10 border border-gray-200/60 group-hover:border-white/10 flex items-center justify-center mb-6 transition-all duration-300">
+                  <svg
+                    className="w-6 h-6 text-[#0054a5] group-hover:text-[#FFBD58] transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    viewBox="0 0 24 24"
+                  >
+                    {t.icon}
+                  </svg>
+                </div>
                 <h3 className="text-[#0f0f23] group-hover:text-white font-bold text-lg leading-tight transition-colors duration-300">
-                  {t}
+                  {t.name}
                 </h3>
               </div>
             ))}
@@ -499,9 +550,9 @@ export default function Home() {
       <section id="agenda" className="bg-[#f7f8fc]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="text-center mb-16 md:mb-20">
-            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">The Weekend</span>
+            <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+              <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Weekend</span>
             </div>
             <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em]">
               The shape of two days.
@@ -526,7 +577,7 @@ export default function Home() {
                       key={i}
                       className={`flex items-center gap-5 py-5 ${i < day.items.length - 1 ? "border-b border-gray-100" : ""}`}
                     >
-                      <span className="text-[#3A40BC] font-mono text-[13px] font-semibold w-14 shrink-0">
+                      <span className="text-[#0054a5] font-mono text-[13px] font-semibold w-14 shrink-0">
                         {item.time}
                       </span>
                       <span className="text-[#0f0f23] font-semibold text-[16px]">
@@ -542,7 +593,7 @@ export default function Home() {
       </section>
 
       {/* ============== 08 — WHO IT'S FOR ============== */}
-      <section className="bg-[#3A40BC] relative overflow-hidden">
+      <section className="bg-[#0054a5] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_120%,rgba(255,189,88,0.1),transparent)]" />
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -593,9 +644,9 @@ export default function Home() {
       <section id="partners" className="bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
           <div className="text-center mb-16 md:mb-20">
-            <div className="inline-flex items-center gap-2 bg-[#3A40BC]/[0.06] px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3A40BC]" />
-              <span className="text-[#3A40BC] text-[12px] font-semibold tracking-[0.12em] uppercase">Partners</span>
+            <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+              <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">Partners</span>
             </div>
             <h2 className="text-[#0f0f23] font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] max-w-xl mx-auto">
               Built with people already doing the work.
@@ -606,10 +657,10 @@ export default function Home() {
             {PARTNERS.map((p) => (
               <div
                 key={p}
-                className="group bg-[#f7f8fc] rounded-2xl px-8 py-7 border border-gray-200/60 hover:border-[#3A40BC]/20 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300 flex items-center gap-4"
+                className="group bg-[#f7f8fc] rounded-2xl px-8 py-7 border border-gray-200/60 hover:border-[#0054a5]/20 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300 flex items-center gap-4"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#3A40BC]/[0.08] group-hover:bg-[#3A40BC] flex items-center justify-center shrink-0 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-[#3A40BC] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <div className="w-10 h-10 rounded-xl bg-[#0054a5]/[0.08] group-hover:bg-[#0054a5] flex items-center justify-center shrink-0 transition-colors duration-300">
+                  <svg className="w-5 h-5 text-[#0054a5] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5Z" />
                   </svg>
                 </div>
@@ -623,7 +674,7 @@ export default function Home() {
       </section>
 
       {/* ============== CTA ============== */}
-      <section id="apply" className="relative bg-[#3A40BC] overflow-hidden">
+      <section id="apply" className="relative bg-[#0054a5] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,189,88,0.15),transparent)]" />
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-28 md:py-40 text-center">
           <div className="inline-flex items-center gap-2 bg-white/[0.08] border border-white/[0.06] px-4 py-2 rounded-full mb-10">
