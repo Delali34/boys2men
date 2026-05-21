@@ -128,13 +128,11 @@ const PARTNERS = [
   "+ Your Org",
 ];
 
-// Pexels — portraits of Black men
-const HERO_IMG =
-  "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200";
-const PROGRAM_IMG =
-  "https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=1200";
-const AUDIENCE_IMG =
-  "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1200";
+// Brand photography
+const HERO_IMG = "/img4.jpg";
+const PROGRAM_IMG = "/img1.jpg";
+const AUDIENCE_IMG = "/img3.jpg";
+const CROSSROADS_IMG = "/img2.jpg";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -390,26 +388,43 @@ export default function Home() {
 
       {/* ============== 01 — THE REALITY (Quote) ============== */}
       <section id="reality" className="relative bg-white overflow-hidden">
-        <div className="absolute top-12 left-1/2 -translate-x-1/2 text-[20rem] md:text-[28rem] font-extrabold leading-none text-gray-100 select-none pointer-events-none" aria-hidden>
-          &ldquo;
-        </div>
-        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-28 md:py-40 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-12">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
-            <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Reality</span>
-          </div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100">
+                <img
+                  src={CROSSROADS_IMG}
+                  alt="A man at a crossroads"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white/80 text-[11px] font-semibold tracking-[0.15em] uppercase mb-1">At the crossroads</p>
+                  <p className="text-white font-bold text-lg leading-tight">The questions every young man faces.</p>
+                </div>
+              </div>
+            </div>
 
-          <blockquote className="text-[#0f0f23] font-extrabold text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.15] tracking-[-0.02em]">
-            &ldquo;I don&rsquo;t know who I&rsquo;m supposed to be —
-            <span className="text-[#0054a5]"> only who I&rsquo;m supposed to look like.&rdquo;</span>
-          </blockquote>
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <div className="inline-flex items-center gap-2 bg-[#0054a5]/[0.06] px-4 py-2 rounded-full mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0054a5]" />
+                <span className="text-[#0054a5] text-[12px] font-semibold tracking-[0.12em] uppercase">The Reality</span>
+              </div>
 
-          <div className="mt-10 flex items-center justify-center gap-3">
-            <div className="h-px w-8 bg-[#FFBD58]" />
-            <p className="text-gray-400 text-[12px] font-semibold tracking-[0.12em] uppercase">
-              Boys2Men Field Interview · Accra · 2025
-            </p>
-            <div className="h-px w-8 bg-[#FFBD58]" />
+              <div className="text-[#0054a5]/15 font-extrabold text-7xl md:text-8xl leading-none mb-4 select-none">&ldquo;</div>
+
+              <blockquote className="text-[#0f0f23] font-extrabold text-[clamp(1.5rem,3.5vw,2.5rem)] leading-[1.2] tracking-[-0.02em]">
+                I don&rsquo;t know who I&rsquo;m supposed to be —
+                <span className="text-[#0054a5]"> only who I&rsquo;m supposed to look like.</span>
+              </blockquote>
+
+              <div className="mt-8 flex items-center gap-3">
+                <div className="h-px w-8 bg-[#FFBD58]" />
+                <p className="text-gray-400 text-[12px] font-semibold tracking-[0.12em] uppercase">
+                  Boys2Men Field Interview · Accra · 2025
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -525,7 +540,7 @@ export default function Home() {
                   "Finances",
                   "Mindset",
                   "Spirituality",
-                  "Brotherhood",
+                  "Family",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-200/80">
                     <div className="w-2 h-2 rounded-full bg-[#FFBD58]" />
