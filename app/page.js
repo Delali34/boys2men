@@ -320,7 +320,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[128px] md:pt-[148px] pb-0">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-8 pb-16 md:pb-24 lg:pb-32">
-              <h1 className="text-white font-extrabold text-[clamp(2.75rem,6.5vw,5.25rem)] leading-[1.06] tracking-[-0.025em]">
+              <h1 className="text-white font-extrabold text-[clamp(2.25rem,5vw,4rem)] leading-[1.08] tracking-[-0.025em]">
                 Navigating
                 <br />
                 Manhood.
@@ -328,7 +328,7 @@ export default function Home() {
                 <span className="text-[#FFBD58]">On Their Terms.</span>
               </h1>
 
-              <p className="mt-7 text-white/55 text-lg md:text-xl leading-relaxed max-w-lg">
+              <p className="mt-6 text-white/55 text-base md:text-lg leading-relaxed max-w-lg">
                 Two days of real conversation for young men aged 18–30 in Accra, Ghana.
               </p>
 
