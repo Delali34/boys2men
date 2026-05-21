@@ -313,12 +313,20 @@ export default function Home() {
 
       {/* ============== HERO ============== */}
       <section id="top" className="relative bg-[#0054a5] overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,189,88,0.12),transparent)]" />
+        {/* Background ambience */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_85%_30%,rgba(255,189,88,0.18),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_10%_70%,rgba(0,40,90,0.4),transparent)]" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[128px] md:pt-[148px] pb-0">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-8 pb-16 md:pb-24 lg:pb-32">
-              <h1 className="text-white font-extrabold text-[clamp(2.25rem,5vw,4rem)] leading-[1.08] tracking-[-0.025em]">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-[120px] md:pt-[140px] pb-16 md:pb-24">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* LEFT — content */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm px-3.5 py-1.5 rounded-full mb-8">
+                <span className="text-[#FFBD58] text-[11px]">&#9670;</span>
+                <span className="text-white/80 text-[12px] font-semibold tracking-[0.12em] uppercase">Cohort 2026 &middot; Accra</span>
+              </div>
+
+              <h1 className="text-white font-extrabold text-[clamp(2.25rem,5vw,4rem)] leading-[1.06] tracking-[-0.025em]">
                 Navigating
                 <br />
                 Manhood.
@@ -326,14 +334,14 @@ export default function Home() {
                 <span className="text-[#FFBD58]">On Their Terms.</span>
               </h1>
 
-              <p className="mt-6 text-white/55 text-base md:text-lg leading-relaxed max-w-lg">
+              <p className="mt-7 text-white/60 text-base md:text-lg leading-relaxed max-w-md">
                 Two days of real conversation for young men aged 18–30 in Accra, Ghana.
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-10">
+              <div className="flex flex-wrap gap-3 mt-9">
                 <a
                   href="#apply"
-                  className="group inline-flex items-center gap-2.5 bg-[#FFBD58] text-[#0f0f23] font-semibold text-[15px] px-8 py-4 rounded-full hover:bg-[#ffcb78] transition-all duration-300 hover:shadow-xl hover:shadow-black/15 hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-2.5 bg-[#FFBD58] text-[#0f0f23] font-semibold text-[14px] px-7 py-3.5 rounded-full hover:bg-[#ffcb78] transition-all duration-300 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5"
                 >
                   Apply for Cohort
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -342,21 +350,51 @@ export default function Home() {
                 </a>
                 <a
                   href="#program"
-                  className="inline-flex items-center gap-2 border border-white/20 text-white font-medium text-[15px] px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-white font-medium text-[14px] px-6 py-3.5 hover:text-[#FFBD58] transition-colors duration-200"
                 >
-                  Learn More
+                  Learn more
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
                 </a>
+              </div>
+
+              {/* Stats row */}
+              <div className="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-white/[0.1] pt-7">
+                {[
+                  ["50+", "Mentees"],
+                  ["20", "Mentors"],
+                  ["8", "Topics"],
+                ].map(([val, label]) => (
+                  <div key={label}>
+                    <p className="text-[#FFBD58] font-extrabold text-2xl md:text-3xl leading-none">{val}</p>
+                    <p className="text-white/45 text-[11px] font-semibold tracking-[0.1em] uppercase mt-2">{label}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="lg:col-span-4 relative lg:max-w-sm lg:ml-auto w-full">
-              <div className="aspect-[3/4] rounded-t-2xl lg:rounded-2xl overflow-hidden ring-1 ring-white/10">
-                <img
-                  src={HERO_IMG}
-                  alt="Young man in Accra"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
+            {/* RIGHT — image with layered accents */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative w-full max-w-[420px] mx-auto lg:ml-auto lg:mr-0">
+                {/* Gold offset block */}
+                <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-[88%] h-[88%] bg-[#FFBD58] rounded-2xl" />
+                {/* Indigo grid texture frame */}
+                <div className="absolute -top-3 -left-3 md:-top-5 md:-left-5 w-24 h-24 border-2 border-[#FFBD58]/40 rounded-2xl" />
+
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/30">
+                  <img
+                    src={HERO_IMG}
+                    alt="A young Ghanaian man, ready to grow"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  {/* Caption pill */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFBD58] pulse-dot shrink-0" />
+                    <p className="text-white text-[12px] font-medium truncate">Real men. Real conversations. Real growth.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
