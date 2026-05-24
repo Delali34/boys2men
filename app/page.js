@@ -129,10 +129,10 @@ const PARTNERS = [
 ];
 
 // Brand photography
-const HERO_IMG = "/img4.jpg";
-const PROGRAM_IMG = "/img1.jpg";
-const AUDIENCE_IMG = "/img3.jpg";
-const CROSSROADS_IMG = "/img2.jpg";
+const HERO_IMG = "/img2.jpg";
+const PROGRAM_IMG = "/img4.jpg";
+const AUDIENCE_IMG = "/img1.jpg";
+const CROSSROADS_IMG = "/img3.jpg";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -731,7 +731,7 @@ export default function Home() {
               </h2>
 
               <p className="text-white/55 text-lg leading-relaxed max-w-md mb-10">
-                Young men in Accra, aged 18–30, ready for honest conversations about the road ahead.
+                Young men in Ghana, aged 18–30, ready for honest conversations about the road ahead.
               </p>
 
               <div className="grid grid-cols-3 gap-4 max-w-sm">
