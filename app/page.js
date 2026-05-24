@@ -130,8 +130,8 @@ const PARTNERS = [
 
 // Brand photography
 const HERO_IMG = "/img2.jpg";
-const PROGRAM_IMG = "/img4.jpg";
-const AUDIENCE_IMG = "/img1.jpg";
+const PROGRAM_IMG = "/img1.jpg";
+const AUDIENCE_IMG = "/img4.jpg";
 const CROSSROADS_IMG = "/img3.jpg";
 
 export default function Home() {
